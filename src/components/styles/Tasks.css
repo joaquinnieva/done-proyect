@@ -1,0 +1,33 @@
+.task-card{
+    position: relative;
+    width: 300px;
+    height: 80px;
+    background-color: #DADDE7;
+    margin: auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow: hidden;
+}
+.card-checkbox{
+    position: relative;
+    background-color: #FFFFFF;
+    width: 20px;
+    height: 20px;
+    margin: 0px 15px;
+}
+.card-name{
+    position: relative;
+    color: #52545F;
+    width: 200px;
+    font-size: 24px;
+    font-weight: 400;
+    overflow: hidden;
+}
+.card-options{
+    position: relative;
+    width: 10px;
+    margin: 0px 20px;
+}
