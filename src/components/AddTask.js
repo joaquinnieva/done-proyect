@@ -32,7 +32,7 @@ const AddTask = ({ addTask, tasks }) => {
         <div className="form-cont">
           <input name="name" value={name} type="text"   placeholder="name"           className="input" onChange={handleChange}></input>
           <input name="desc" value={desc} type="text"   placeholder="description"    className="input" onChange={handleChange}></input>
-          <input name="todo" value={todo} type="number" placeholder="days to do it"  className="input" onChange={handleChange}></input>
+          <input name="todo" value={todo} type="date" placeholder="day to do it"  className="input" onChange={handleChange}></input>
           <input name="submit" type="submit" value="Add task"  className="input-send" onSubmit={handleSubmit} onClick={() => addTask(task)}></input>
         </div>
       </div>

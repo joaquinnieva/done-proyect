@@ -50,9 +50,11 @@
 }
 .card-checkbox-fix {
   position: relative;
-  width: 20px;
-  height: 20px;
-  margin: 0px 15px;
+  background-color: #316CBC;
+  border-radius: 10px;
+  width: 10px;
+  height: 8px;
+  margin: auto 25px;
 }
 .card-name {
   position: relative;

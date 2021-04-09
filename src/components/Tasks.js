@@ -31,7 +31,7 @@ const Tasks = ({ tasks, taskDone, tasksdone, taskRemove }) => {
             </div>
 
             <div className="card-desc">description: {task.desc}</div>
-            <div className="card-todo">days to do: {task.todo}</div>
+            <div className="card-todo">date: {task.todo}</div>
           </div>
         ))
       )}
@@ -54,7 +54,7 @@ const Tasks = ({ tasks, taskDone, tasksdone, taskRemove }) => {
           </div>
 
           <div className="card-desc">description: {task.desc}</div>
-          <div className="card-todo">days to do: {task.todo}</div>
+          <div className="card-todo">date: {task.todo}</div>
         </div>
       ))}
     </div>
