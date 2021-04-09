@@ -2,8 +2,14 @@ import { createStore } from "redux";
 
 // constantes
 const initialState = {
-  tasks: [],
-  tasksdone: []
+  tasks: [
+    {
+      name: "joda",
+      desc: "juani",
+      todo: "1",
+    },
+  ],
+  tasksdone: [],
 };
 
 // types
@@ -14,14 +20,14 @@ const productReducer = (state = initialState, action) => {
     case "ADDTASK":
       return {
         ...state,
-
+        tasks: state.tasks.concat(action.task),
       };
 
-    case "TASKDONE":
-      return {
-        ...state,
+    // case "TASKDONE":
+    //   return {
+    //     ...state,
 
-      };
+    //   };
 
     default:
       return state;

@@ -8,7 +8,7 @@ const Main = () => {
       <div className="main-container">
         <div className="filters-container"></div>
         <div className="task-container">
-          {/* <Tasks /> */}
+          <Tasks />
         </div>
       </div>
     </main>
