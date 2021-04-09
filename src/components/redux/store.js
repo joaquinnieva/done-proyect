@@ -2,13 +2,7 @@ import { createStore } from "redux";
 
 // constantes
 const initialState = {
-  tasks: [
-    {
-      name: "joda",
-      desc: "juani",
-      todo: "1",
-    },
-  ],
+  tasks: [],
   tasksdone: [],
 };
 
@@ -23,11 +17,19 @@ const productReducer = (state = initialState, action) => {
         tasks: state.tasks.concat(action.task),
       };
 
-    // case "TASKDONE":
-    //   return {
-    //     ...state,
+    case "TASKDONE":
+      return {
+        ...state,
+        tasksdone: state.tasksdone.concat(action.task),
+        tasks: state.tasks.filter((task) => task.name !== action.task.name),
+      };
 
-    //   };
+    case "TASKREMOVE":
+      return {
+        ...state,
+        tasks: state.tasks.filter((task) => task.name !== action.task.name),
+        tasksdone: state.tasksdone.filter((task) => task.name !== action.task.name),
+      };
 
     default:
       return state;

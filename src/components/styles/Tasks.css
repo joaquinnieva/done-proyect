@@ -1,33 +1,83 @@
-.task-card{
-    position: relative;
-    width: 300px;
-    height: 80px;
-    background-color: #DADDE7;
-    margin: 5px auto;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    overflow: hidden;
+.notasks {
+  margin: 150px auto;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #52545f;
 }
-.card-checkbox{
-    position: relative;
-    background-color: #FFFFFF;
-    width: 20px;
-    height: 20px;
-    margin: 0px 15px;
+
+.card-info-v {
+  width: 300px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 18px auto 0px auto;
 }
-.card-name{
-    position: relative;
-    color: #52545F;
-    width: 200px;
-    font-size: 24px;
-    font-weight: 400;
-    overflow: hidden;
+.task-card {
+  position: relative;
+  width: 300px;
+  height: 120px;
+  background-color: #dadde7;
+  margin: 25px auto;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
 }
-.card-options{
-    position: relative;
-    width: 10px;
-    margin: 0px 20px;
+.task-card .card-desc {
+  position: absolute;
+  left: 14px;
+  top: 60px;
+  margin: 0px auto 10px auto;
+}
+.task-card .card-todo {
+  position: absolute;
+  left: 14px;
+  top: 85px;
+}
+
+.card-checkbox {
+  position: relative;
+  background-color: #ffffff;
+  width: 20px;
+  height: 20px;
+  margin: 0px 15px;
+}
+.card-checkbox-fix {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 0px 15px;
+}
+.card-name {
+  position: relative;
+  color: #52545f;
+  width: 200px;
+  font-size: 24px;
+  font-weight: 400;
+  overflow: hidden;
+}
+.card-options {
+  position: relative;
+  margin: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tasks-done {
+  height: 50px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #52545f;
+  margin: 20px auto;
+  border-top: solid 1px #52545f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
