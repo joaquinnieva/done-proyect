@@ -2,4 +2,4 @@
 
 ## Tecnologies: React & Redux
 
-### `Proyect to my portfolio`
+### `Proyect of my portfolio`
