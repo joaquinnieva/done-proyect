@@ -1,7 +1,5 @@
 # Tasks React App
 
-## React ## Redux
+## Tecnologies: React & Redux
 
-In the project directory, you can run:
-
-### `npm start`
+### `Proyect to my portfolio`
