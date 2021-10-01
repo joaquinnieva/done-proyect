@@ -10,23 +10,12 @@ const Tasks = ({ tasks, taskDone, tasksdone, taskRemove }) => {
         <p className="notasks">Add tasks to do</p>
       ) : (
         tasks.map((task) => (
-          <div
-            className="task-card"
-            key={task.name}
-          >
+          <div className="task-card" key={task.id}>
             <div className="card-info-v">
-              <input
-                type="radio"
-                className="card-checkbox"
-                onClick={() => taskDone(task)}
-              ></input>
+              <input type="radio" className="card-checkbox" onClick={() => taskDone(task)}></input>
               <div className="card-name">{task.name}</div>
               <div className="card-options">
-                <img
-                  src={Images.options}
-                  alt="options"
-                  onClick={() => taskRemove(task)}
-                />
+                <img src={Images.options} alt="options" onClick={() => taskRemove(task)} />
               </div>
             </div>
 
@@ -36,20 +25,14 @@ const Tasks = ({ tasks, taskDone, tasksdone, taskRemove }) => {
         ))
       )}
 
-      {tasksdone.length === 0 ? null : (
-        <div className="tasks-done">Tasks done</div>
-      )}
+      {tasksdone.length === 0 ? null : <div className="tasks-done">Tasks done</div>}
       {tasksdone.map((task) => (
-        <div className="task-card" key={task.name}>
+        <div className="task-card" key={task.id}>
           <div className="card-info-v">
             <div className="card-checkbox-fix"></div>
             <div className="card-name">{task.name}</div>
             <div className="card-options">
-              <img
-                src={Images.options}
-                alt="options"
-                onClick={() => taskRemove(task)}
-              />
+              <img src={Images.options} alt="options" onClick={() => taskRemove(task)} />
             </div>
           </div>
 

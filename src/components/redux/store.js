@@ -21,14 +21,14 @@ const productReducer = (state = initialState, action) => {
       return {
         ...state,
         tasksdone: state.tasksdone.concat(action.task),
-        tasks: state.tasks.filter((task) => task.name !== action.task.name),
+        tasks: state.tasks.filter((task) => task.id !== action.task.id),
       };
 
     case "TASKREMOVE":
       return {
         ...state,
-        tasks: state.tasks.filter((task) => task.name !== action.task.name),
-        tasksdone: state.tasksdone.filter((task) => task.name !== action.task.name),
+        tasks: state.tasks.filter((task) => task.id !== action.task.id),
+        tasksdone: state.tasksdone.filter((task) => task.id !== action.task.id),
       };
 
     default:

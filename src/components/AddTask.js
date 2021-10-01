@@ -2,38 +2,73 @@ import React, { useState } from "react";
 import "./styles/AddTask.css";
 import { connect } from "react-redux";
 
-
 const AddTask = ({ addTask, tasks }) => {
   const [click, setClick] = useState(true);
   const handleClick = () => setClick(!click);
+  const [idTask, setIdTask] = useState(1);
 
   const [task, setTask] = useState({
-    name:"",
-    desc:"",
-    todo:""
+    name: "",
+    desc: "",
+    todo: "",
   });
-  const {name, desc, todo} = task
+  const { name, desc, todo } = task;
 
-  const handleChange = (e) =>{
+  const addingTask = (task) => {
+    setIdTask(idTask + 1);
+    addTask({
+      id: idTask,
+      ...task,
+    });
+  };
+
+  const handleChange = (e) => {
     setTask({
       ...task,
-      [e.target.name]: e.target.value
-    })
+      [e.target.name]: e.target.value,
+    });
+  };
 
-  }
-
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className="icon-addtask">
-        <div className={click ? "form" : "form-open"}>
+      <div className={click ? "form" : "form-open"}>
         <div className="form-cont">
-          <input name="name" value={name} type="text"   placeholder="name"           className="input" onChange={handleChange}></input>
-          <input name="desc" value={desc} type="text"   placeholder="description"    className="input" onChange={handleChange}></input>
-          <input name="todo" value={todo} type="date" placeholder="day to do it"  className="input" onChange={handleChange}></input>
-          <input name="submit" type="submit" value="Add task"  className="input-send" onSubmit={handleSubmit} onClick={() => addTask(task)}></input>
+          <input
+            name="name"
+            value={name}
+            type="text"
+            placeholder="name"
+            className="input"
+            onChange={handleChange}
+          ></input>
+          <input
+            name="desc"
+            value={desc}
+            type="text"
+            placeholder="description"
+            className="input"
+            onChange={handleChange}
+          ></input>
+          <input
+            name="todo"
+            value={todo}
+            type="date"
+            placeholder="day to do it"
+            className="input"
+            onChange={handleChange}
+          ></input>
+          <input
+            name="submit"
+            type="submit"
+            value="Add task"
+            className="input-send"
+            onSubmit={handleSubmit}
+            onClick={() => addingTask(task)}
+          ></input>
         </div>
       </div>
       <div className={click ? "ico-cont-at" : "ico-cont-at-open"} onClick={handleClick}>
@@ -44,7 +79,7 @@ const AddTask = ({ addTask, tasks }) => {
   );
 };
 const mapStateToProps = (state) => ({
-  tasks: state.tasks
+  tasks: state.tasks,
 });
 
 const mapDispatchToProps = (dispatch) => ({
