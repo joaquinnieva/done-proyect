@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import "./styles/AddTask.css";
-import { connect } from "react-redux";
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import '../styles/AddTask.css';
 
 const AddTask = ({ addTask, tasks }) => {
   const [click, setClick] = useState(true);
@@ -8,9 +8,9 @@ const AddTask = ({ addTask, tasks }) => {
   const [idTask, setIdTask] = useState(1);
 
   const [task, setTask] = useState({
-    name: "",
-    desc: "",
-    todo: "",
+    name: '',
+    desc: '',
+    todo: '',
   });
   const { name, desc, todo } = task;
 
@@ -35,7 +35,7 @@ const AddTask = ({ addTask, tasks }) => {
 
   return (
     <div className="icon-addtask">
-      <div className={click ? "form" : "form-open"}>
+      <div className={click ? 'form' : 'form-open'}>
         <div className="form-cont">
           <input
             name="name"
@@ -71,7 +71,7 @@ const AddTask = ({ addTask, tasks }) => {
           ></input>
         </div>
       </div>
-      <div className={click ? "ico-cont-at" : "ico-cont-at-open"} onClick={handleClick}>
+      <div className={click ? 'ico-cont-at' : 'ico-cont-at-open'} onClick={handleClick}>
         <div className="addtask-lineA"></div>
         <div className="addtask-lineB"></div>
       </div>
@@ -85,7 +85,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   addTask(task) {
     dispatch({
-      type: "ADDTASK",
+      type: 'ADDTASK',
       task,
     });
   },

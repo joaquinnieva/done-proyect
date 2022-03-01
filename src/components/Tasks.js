@@ -1,7 +1,7 @@
-import React from "react";
-import "./styles/Tasks.css";
-import Images from "./Images";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
+import '../styles/Tasks.css';
+import Images from './Images';
 
 const Tasks = ({ tasks, taskDone, tasksdone, taskRemove }) => {
   return (
@@ -52,13 +52,13 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   taskDone(task) {
     dispatch({
-      type: "TASKDONE",
+      type: 'TASKDONE',
       task,
     });
   },
   taskRemove(task) {
     dispatch({
-      type: "TASKREMOVE",
+      type: 'TASKREMOVE',
       task,
     });
   },

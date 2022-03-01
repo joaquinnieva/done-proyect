@@ -1,7 +1,7 @@
-import logo from "../components/images/logo.svg";
-import options from "../components/images/options.svg";
-import calendar from "../components/images/calendar.svg";
-import fav from "../components/images/favs.svg";
+import calendar from '../images/calendar.svg';
+import fav from '../images/favs.svg';
+import logo from '../images/logo.svg';
+import options from '../images/options.svg';
 
 let Images = {
   logo: logo,

@@ -1,6 +1,6 @@
-import React from "react";
-import "./styles/Main.css";
-import Tasks from "./Tasks";
+import React from 'react';
+import '../styles/Main.css';
+import Tasks from './Tasks';
 
 const Main = () => {
   return (
