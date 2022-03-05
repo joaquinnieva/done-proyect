@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../styles/AddTask.css';
 
 const AddTask = ({ addTask, tasks }) => {
@@ -13,13 +15,17 @@ const AddTask = ({ addTask, tasks }) => {
     todo: '',
   });
   const { name, desc, todo } = task;
-
+  const notify = () => toast('Task no name');
   const addingTask = (task) => {
     setIdTask(idTask + 1);
-    addTask({
-      id: idTask,
-      ...task,
-    });
+    if (task.name.length === 0) {
+      notify('sin name');
+    } else {
+      addTask({
+        id: idTask,
+        ...task,
+      });
+    }
   };
 
   const handleChange = (e) => {
@@ -35,6 +41,18 @@ const AddTask = ({ addTask, tasks }) => {
 
   return (
     <div className="icon-addtask">
+      <div className="toastify">
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar
+          newestOnTop={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+      </div>
       <div className={click ? 'form' : 'form-open'}>
         <div className="form-cont">
           <input
@@ -44,6 +62,7 @@ const AddTask = ({ addTask, tasks }) => {
             placeholder="name"
             className="input"
             onChange={handleChange}
+            autoComplete="off"
           ></input>
           <input
             name="desc"
@@ -52,6 +71,7 @@ const AddTask = ({ addTask, tasks }) => {
             placeholder="description"
             className="input"
             onChange={handleChange}
+            autoComplete="off"
           ></input>
           <input
             name="todo"

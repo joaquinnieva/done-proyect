@@ -1,4 +1,4 @@
-import { createStore } from "redux";
+import { createStore } from 'redux';
 
 // constantes
 const initialState = {
@@ -11,20 +11,26 @@ const initialState = {
 // reducer
 const productReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADDTASK":
+    case 'ADDTASK':
       return {
         ...state,
         tasks: state.tasks.concat(action.task),
       };
 
-    case "TASKDONE":
+    case 'SETTASKS':
+      return {
+        ...state,
+        tasks: action.task,
+      };
+
+    case 'TASKDONE':
       return {
         ...state,
         tasksdone: state.tasksdone.concat(action.task),
         tasks: state.tasks.filter((task) => task.id !== action.task.id),
       };
 
-    case "TASKREMOVE":
+    case 'TASKREMOVE':
       return {
         ...state,
         tasks: state.tasks.filter((task) => task.id !== action.task.id),

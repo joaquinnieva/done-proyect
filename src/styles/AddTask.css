@@ -1,3 +1,7 @@
+.toastify {
+  position: absolute;
+  z-index: 10;
+}
 .icon-addtask {
   position: fixed;
   width: 100%;

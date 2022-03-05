@@ -5,40 +5,50 @@
   letter-spacing: 2px;
   color: #52545f;
 }
-
 .card-info-v {
-  width: 300px;
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  margin: 18px auto 0px auto;
+  margin: 18px 0px 0px 0px;
+  justify-content: space-between;
+}
+.task-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 15px;
+  margin: 15px;
 }
 .task-card {
   position: relative;
-  width: 300px;
+  width: 100%;
   height: 120px;
   background-color: #dadde7;
-  margin: 25px auto;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
   overflow: hidden;
-  cursor: pointer;
 }
 .task-card .card-desc {
-  position: absolute;
-  left: 14px;
-  top: 60px;
-  margin: 0px auto 10px auto;
+  width: calc(100% - 10px);
+  height: 20px;
+  padding: 0px 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 .task-card .card-todo {
-  position: absolute;
-  left: 14px;
-  top: 85px;
+  width: calc(100% - 10px);
+  height: 20px;
+  padding: 0px 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .card-checkbox {
@@ -50,7 +60,7 @@
 }
 .card-checkbox-fix {
   position: relative;
-  background-color: #316CBC;
+  background-color: #316cbc;
   border-radius: 10px;
   width: 10px;
   height: 8px;
@@ -70,6 +80,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .tasks-done {
   height: 50px;
@@ -77,9 +88,27 @@
   text-align: center;
   letter-spacing: 2px;
   color: #52545f;
-  margin: 20px auto;
+  margin: 20px 40px;
   border-top: solid 1px #52545f;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 950px) {
+  .task-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 15px 10px;
+    margin: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .task-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 15px 10px;
+    margin: 40px;
+  }
 }

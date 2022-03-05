@@ -6,9 +6,9 @@ const Main = () => {
   return (
     <main>
       <div className="main-container">
-        <div className="task-container">
+        <>
           <Tasks />
-        </div>
+        </>
       </div>
     </main>
   );
